@@ -1,0 +1,124 @@
+KLASY ABSTRAKCYJNE W JAVA - NOTATKA
+
+1. Co to jest klasa abstrakcyjna?
+- Klasa abstrakcyjna to klasa, która nie może być bezpośrednio instanciowana. Zamiast tego, jest przeznaczona do bycia rozszerzaną przez inne klasy.
+- Klasa abstrakcyjna może zawierać zarówno metody abstrakcyjne (czyli nieposiadające implementacji), jak i metody z pełną implementacją.
+- Celem klas abstrakcyjnych jest umożliwienie tworzenia szablonów dla klas dziedziczących, które muszą implementować metody abstrakcyjne.
+
+2. Składnia klasy abstrakcyjnej:
+----------------
+abstract class NazwaKlasy {
+    // Pola (zmienne) klasy abstrakcyjnej
+    protected int pole;
+
+    // Konstruktor klasy abstrakcyjnej
+    public NazwaKlasy(int pole) {
+        this.pole = pole;
+    }
+
+    // Metoda abstrakcyjna (brak implementacji)
+    public abstract void metodaAbstrakcyjna();
+
+    // Metoda z pełną implementacją
+    public void metodaZImplementacja() {
+        System.out.println("To jest metoda z implementacją.");
+    }
+}
+----------------
+- **`abstract`** – słowo kluczowe, które oznacza klasę lub metodę abstrakcyjną.
+- Klasa abstrakcyjna może zawierać zarówno metody abstrakcyjne, jak i nieabstrakcyjne (z implementacją).
+
+3. Cechy klas abstrakcyjnych:
+- **Nie można tworzyć instancji klasy abstrakcyjnej**: Nie można utworzyć obiektu bezpośrednio z klasy abstrakcyjnej. Można to zrobić tylko z jej klas dziedziczących.
+  
+  Przykład:
+  ----------------
+  // Błąd! Nie można stworzyć obiektu klasy abstrakcyjnej
+  // NazwaKlasy obiekt = new NazwaKlasy(5);
+  ----------------
+
+- **Może mieć konstruktor**: Klasa abstrakcyjna może mieć konstruktor, który jest wywoływany przez klasy dziedziczące.
+- **Może mieć zarówno metody abstrakcyjne, jak i implementacje**: Klasa abstrakcyjna może zawierać zarówno metody, które muszą być implementowane przez klasy dziedziczące, jak i metody z pełną implementacją.
+
+4. Metody abstrakcyjne:
+- **Metoda abstrakcyjna** to metoda, która nie ma implementacji i musi być zaimplementowana w klasie dziedziczącej.
+- Metody abstrakcyjne są zadeklarowane przy użyciu słowa kluczowego `abstract` i nie mają ciała (implementacji).
+  
+  Przykład:
+  ----------------
+  public abstract void metodaAbstrakcyjna();  // Deklaracja metody abstrakcyjnej
+  ----------------
+
+- Klasom dziedziczącym muszą implementować wszystkie metody abstrakcyjne, chyba że one również są abstrakcyjne.
+
+5. Dziedziczenie klas abstrakcyjnych:
+- Klasa dziedzicząca po klasie abstrakcyjnej musi implementować wszystkie metody abstrakcyjne, chyba że sama jest klasą abstrakcyjną.
+
+  Przykład:
+  ----------------
+  class KlasaDziecko extends NazwaKlasy {
+      public KlasaDziecko(int pole) {
+          super(pole);
+      }
+
+      // Implementacja metody abstrakcyjnej
+      @Override
+      public void metodaAbstrakcyjna() {
+          System.out.println("Implementacja metody abstrakcyjnej.");
+      }
+  }
+  ----------------
+- Klasa `KlasaDziecko` musi implementować metodę `metodaAbstrakcyjna`, ponieważ jest to metoda abstrakcyjna w klasie `NazwaKlasy`.
+
+6. Dlaczego używamy klas abstrakcyjnych?
+- **Umożliwiają wspólne dziedziczenie**: Klasa abstrakcyjna może zawierać wspólne metody i pola, które są dziedziczone przez klasy potomne.
+- **Definiują szablony dla klas dziedziczących**: Kiedy klasa abstrakcyjna zawiera metody abstrakcyjne, wymusza na klasach dziedziczących ich implementację. To pozwala na zdefiniowanie ogólnych interfejsów.
+- **Zwiększają elastyczność kodu**: Dzięki klasom abstrakcyjnym możliwe jest tworzenie ogólnych metod, które później mogą być rozszerzane i dostosowywane do potrzeb klas potomnych.
+
+7. Przykład zastosowania klasy abstrakcyjnej:
+- W przykładzie poniżej klasa abstrakcyjna `Zwierze` ma metodę abstrakcyjną `dzwiek()`, którą muszą zaimplementować klasy dziedziczące.
+  
+  Przykład:
+  ----------------
+  abstract class Zwierze {
+      public abstract void dzwiek();  // Metoda abstrakcyjna
+
+      public void jedzenie() {  // Metoda z pełną implementacją
+          System.out.println("Zwierzę je jedzenie.");
+      }
+  }
+
+  class Pies extends Zwierze {
+      @Override
+      public void dzwiek() {
+          System.out.println("Hau Hau");
+      }
+  }
+
+  class Kot extends Zwierze {
+      @Override
+      public void dzwiek() {
+          System.out.println("Miau Miau");
+      }
+  }
+  ----------------
+
+  Przykład użycia:
+  ----------------
+  Zwierze pies = new Pies();
+  pies.dzwiek();  // Wypisuje "Hau Hau"
+
+  Zwierze kot = new Kot();
+  kot.dzwiek();  // Wypisuje "Miau Miau"
+  kot.jedzenie();  // Wypisuje "Zwierzę je jedzenie."
+  ----------------
+
+8. Kiedy używać klas abstrakcyjnych?
+- **Kiedy chcesz zdefiniować ogólną funkcjonalność**, którą klasy dziedziczące mogą implementować w sposób specyficzny.
+- **Kiedy masz pewne metody wspólne**, ale inne, które wymagają specyficznej implementacji w klasach dziedziczących.
+- **Kiedy chcesz ograniczyć możliwość tworzenia instancji klasy**, aby uniemożliwić bezpośrednie tworzenie obiektów z klasy, która nie jest w pełni zaimplementowana.
+
+9. Klasa abstrakcyjna vs. Interfejs:
+- **Interfejs**: Może zawierać tylko metody abstrakcyjne (do Javy 7) oraz domyślne metody (od Javy 8). Służy do definiowania kontraktów (interfejsów) dla klas.
+- **Klasa abstrakcyjna**: Może zawierać zarówno metody abstrakcyjne, jak i implementacje. Stosuje się, gdy chcesz zapewnić wspólną funkcjonalność oraz szablon do rozszerzania w klasach dziedziczących.
+
