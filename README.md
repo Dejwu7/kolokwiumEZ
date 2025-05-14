@@ -5,8 +5,12 @@ Klasa jest to szablon, receptura za pomocą której tworzymy obiekty.
 Definiuje ona pola, czy też atrybuty danej klasy, które są jej cechami, jak np.rasa kota, moc samochodu, smak lodów.
 Do tworzenia klasy wykorzystujemy specjalną metodę zwaną konstruktorem. Jest to dokładny zbior instrukcji potrzebny żeby utworzyć dany obiekt klasy, czyli mamy klasę ciasto, wiemy że składa ona się z danych składnników (pól), a w konstruktorze mamy konkretną receptórę tworzącą to ciasto.
 
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Rodzaje_klas_w_Java.txt
+
 ## Obiekty
 Obiekty to konkretne, gotowe do użytku instancje danej klasy utworzone za pomocą konstruktora, lub innych metod wytwórczych. Do konkretnego obiektu klay, wewnątrz jej kodu odwołujemy się za pomocą słowa kluczowego **this**. Jest ono niezbędne gdy argument metody, oraz pole klasy mają taką samą nazwę.
+
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Obiekty_w_Java_Notatka.txt
 
 ## Metody
 Klasa zawiera też swoje metody, czyli należące do niej zachowania, jak szcekanie psa, uruchamianie samochodu, skakanie kota. Specjalnym typem metod są akcesory i mutatory, służące do zwracania lub zmieniania pól klasy. Sa one niezbędne gdy mamy do czynienia z enkapsulacją.
@@ -126,6 +130,8 @@ public class Main {
 
 ```
 
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Enkapsulacja_w_Java.txt
+
 # Dziedziczenie
 
 W programowianiu obiektowy dziedziczenie jest to zabieg w którym jedna klasa jest pochodną poprzedniej poprzedniej klasy, i przejmuje / dziedziczący po niej pola i metody.
@@ -243,6 +249,8 @@ public class RaceCar extends Car {
 
 
 ```
+
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Dziedziczenie_w_Java.txt
 
 # Klasy Abstrakcyjne
 
