@@ -15,6 +15,8 @@ W zależności od tego czy są statyczne czy nie do ich wywołania potrzebujemy 
 
 Metody statyczne możemy wywoływać na klasie.
 
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Metody_w_Java.txt
+
 ## Enkapsulacja
 
 Jest to sposób ograniczania dostępu do pól i metod klasy. Mamy 3 poziomy / typy dostepu:
