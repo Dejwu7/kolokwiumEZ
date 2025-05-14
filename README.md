@@ -362,6 +362,7 @@ public class RaceCar extends Car {
 
 ```
 
+
 RoadCar
 
 ```java
@@ -392,11 +393,15 @@ public class RoadCar extends Car {
 }
 ```
 
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Klasy-abstrakcyjne_w_Java.txt
+
 
 # Kontenery
 Czy też Collections pozwalająn na grupowanie obiektów danej klasy, jak Integer, String, RaceCar w jedną zmienną. W Javie mamy wiele typów Kolekcji:
 
 https://www.geeksforgeeks.org/collections-in-java-2/
+
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Kontenery_w_Java.txt
 
 ale najistotniejszymi są:
 
@@ -409,6 +414,8 @@ raceCars.add(new RaceCar("RWD", 700, 350.0f, 80.0f));
 raceCars.add(new RaceCar("AWD", 850, 400.0f, 90.0f));
 ```
 
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/ArrayList-List_w_Java.txt
+
 ## Set
 Nieuporządkowana lista, zawierająca tylko unikalne elementy, czyli niedopuszczalne są duplikaty
 
@@ -418,6 +425,8 @@ raceCarBrands.add("Ferrari");
 raceCarBrands.add("Aston Martin");
 raceCarBrands.add("Ford");
 ```
+
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Set_w_Java.txt
 
 ## Map (HashMap)
 
@@ -431,6 +440,8 @@ raceCarNumbers.put(33, new RaceCar("AWD", 850, 410.0f, 95.0f));
 RaceCar car44 = raceCarNumbers.get(44);
 ```
 
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Map-HashMap_w_Java.txt
+
 ## Kolejka, Queue
 
 Coś jak lista, tylko że nie mamy beżpośredniego dostępu do indeksów. Elementy są dodawane i wyjmowane wg. strategii FIFO (First In First Out). Czyli jak normalna kolejka np. w skelpie do mięsa.
@@ -440,6 +451,9 @@ Queue<RaceCar> pitStopQueue = new LinkedList<>();
 pitStopQueue.add(new RaceCar("RWD", 800, 370.0f, 85.0f));
 pitStopQueue.add(new RaceCar("AWD", 850, 390.0f, 88.0f));
 ```
+
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Kolejka-Queue_w_Java.txt
+
 ## Stos, Stack
 
 Identyczne do kolejki, tylko stratego dodawania i wyjmowania jest inna. Tym razem mamy do czynienia z LIFO (Last In First Out), czyli jak stos talerzy / ksiąrzek. Dodajemy na górę i zdejmujemy z góry.
@@ -449,4 +463,6 @@ Stack<RaceCar> stack = new Stack<>();
 stack.push(new RaceCar("RWD", 750, 360.0f, 80.0f));
 stack.push(new RaceCar("AWD", 870, 400.0f, 90.0f));
 ```
+
+https://github.com/Dejwu7/kolokwiumEZ/blob/main/Stos-Stack_w_Java.txt
 
