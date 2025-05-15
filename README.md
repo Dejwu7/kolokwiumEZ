@@ -554,4 +554,5 @@ String#split([znak dzielnik]) - dzieli tekst przez podany znak
 ogólne#var - zapis do zmiennej
     ogólne#fori - pętla for liczbowa
     ogóle#for - pętla po tablicy
+instanceof -> porównuje czy dany Obj jest danego typu 
 ```
