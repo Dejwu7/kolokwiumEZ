@@ -466,3 +466,76 @@ stack.push(new RaceCar("AWD", 870, 400.0f, 90.0f));
 
 https://github.com/Dejwu7/kolokwiumEZ/blob/main/Stos-Stack_w_Java.txt
 
+# Interfejs
+
+Interfejs to zestaw metod które muszą zostać za implementoważe poprzez klasę implementującą dany interfejs. Aby klasa wykorzystała dany interfejs wukorzystujemy keyword **implements**. Klasa może implementować wiele interfejsów na raz.
+
+Interfejs Refualable
+
+```java
+public interface Refuelable {
+    void refuel(float amount);
+}
+```
+RaceCar z interfejsem
+
+```java
+public class RaceCar extends Car implements Refuelable {
+    private float downforce;
+    private float fuelLevel;
+    private float fuelTankCapacity;
+
+    public RaceCar(String drivetrain, int power, float downforce, float fuelTankCapacity) {
+        super(drivetrain, power, 2); // Race cars usually have 2 doors
+        this.downforce = downforce;
+        this.fuelTankCapacity = fuelTankCapacity;
+        this.fuelLevel = 0;
+    }
+
+    @Override
+    public void refuel(float amount) {
+        fuelLevel = Math.min(fuelLevel + amount, fuelTankCapacity);
+        System.out.println("Zatankowano wyścigówkę " + fuelLevel + "L");
+    }
+
+    /// Reszta tak samo jak poprzednio
+}
+```
+# Wyjątki
+
+Wyjątki czyli inaczej błęd które nasz kod morze napotkać podczas działania, i wtedy java rzuca wyjątek. Wiele z nich trzeba jawnie w jave przechwycić i obsłużyć. Wykorzystujemy do tego słowa kluczowe **try** i **cath**.
+try - słyży do zaznaczenia części kodu która będzie testowana pod kątem rzucania błędów podczas działania
+catch - pozwala zdefiniować blok kodu który będzie wykonywany gdy dany wyjątek zostanie złapany.
+Morzemy równierz pisać własne wyjątki dziedziczac po klasie Exception
+
+OverfillException
+```java
+public class OverfillException extends Exception {
+    public OverfillException(String message) {
+        super(message);
+    }
+}
+```
+```java
+public class RaceCar extends Car implements Refuelable {
+    private float downforce;
+    private float fuelLevel;
+    private float fuelTankCapacity;
+
+    public RaceCar(String drivetrain, int power, float downforce, float fuelTankCapacity) {
+        super(drivetrain, power, 2);
+        this.downforce = downforce;
+        this.fuelTankCapacity = fuelTankCapacity;
+        this.fuelLevel = 0;
+    }
+
+    @Override
+    public void refuel(float amount) throws OverfillException { // zaznaczamy że metoda rzuca dany wyjątek
+        if (fuelLevel + amount > fuelTankCapacity) {
+            throw new OverfillException("Nadmiar paliwa, nie możemy zatankwać więcej niż " + fuelTankCapacity + "L");
+        }
+        fuelLevel += amount;
+        System.out.println("Zatankowano do " + fuelLevel + "L");
+    }
+}
+```
