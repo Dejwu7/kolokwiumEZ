@@ -539,7 +539,7 @@ public class RaceCar extends Car implements Refuelable {
     }
 }
 ```
-
+```java
 String#split([znak dzielnik]) - dzieli tekst przez podany znak
     String#split([znak dzielnik], [limit]) - dzieli tekst przez podany znak
     String#replace([co zamienić], [na co zamienić]) - zamienia podany znak na inny w tekście
@@ -554,3 +554,4 @@ String#split([znak dzielnik]) - dzieli tekst przez podany znak
 ogólne#var - zapis do zmiennej
     ogólne#fori - pętla for liczbowa
     ogóle#for - pętla po tablicy
+```
