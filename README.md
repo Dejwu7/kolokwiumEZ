@@ -556,3 +556,46 @@ ogólne#var - zapis do zmiennej
     ogóle#for - pętla po tablicy
 instanceof -> porównuje czy dany Obj jest danego typu 
 ```
+
+#STRUMIENIE
+
+```java
+List<String> namesList = Arrays.asList("John", "Marry", "George", "Paul", "Alice", "Ann");
+
+    namesList
+            .stream()
+            .filter(e -> e.startsWith("A"))
+            .map(String::toUpperCase)
+            .sorted()
+            .forEach(System.out::println);
+```
+
+```java
+
+sortowanie strumienia:
+ List<String> names = List.of("Jan", "Anna", "Marek", "Zofia");
+
+    List<String> sortedNames = names.stream()
+            .sorted()
+            .collect(Collectors.toList());
+
+    System.out.println("Posortowane nazwy: " + sortedNames);
+
+    modyfikacja danych:
+    List<String> names = List.of("Jan", "Anna", "Marek", "Zofia");
+
+    List<String> upperCaseNames = names.stream()
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+
+    System.out.println("Nazwy z wielkimi literami: " + upperCaseNames);
+
+    liczby parzyste:
+    List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+    List<Integer> evenNumbers = numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .collect(Collectors.toList());
+
+    System.out.println("Liczby parzyste: " + evenNumbers);
+```
