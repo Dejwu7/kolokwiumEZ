@@ -557,7 +557,7 @@ ogólne#var - zapis do zmiennej
 instanceof -> porównuje czy dany Obj jest danego typu 
 ```
 
-#STRUMIENIE
+##STRUMIENIE
 
 ```java
 List<String> namesList = Arrays.asList("John", "Marry", "George", "Paul", "Alice", "Ann");
